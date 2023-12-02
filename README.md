@@ -57,3 +57,8 @@ curl --location --request GET 'http://ВАШ_ДОМЕН/control-admin/api/patien
     "id": "2"
 }'
 ```
+
+*Использовалось:*   
+phpMyAdmin - создание бд и отслеживание изменений;   
+postman - тестирование запросов;   
+Open Server Panel - локальный сервер
