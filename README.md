@@ -15,6 +15,17 @@ CREATE TABLE Visits (
     doctor_name VARCHAR(255) NOT NULL,
     visits BOOLEAN NOT NULL
 );
+
+
+CREATE TABLE Visits (
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    patient_name VARCHAR(255) NOT NULL,
+    patient_phone VARCHAR(11) NOT NULL,
+    recording_date DATE NOT NULL,
+    doctor_name VARCHAR(255) NOT NULL,
+    visits TINYINT DEFAULT 0
+);
 ```
 
 Запросы через постман:  
