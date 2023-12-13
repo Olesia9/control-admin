@@ -4,7 +4,7 @@ class Admin
 {
     // подключение к базе данных и таблице "Visits"
     public $conn;
-    private $table_name = "Visits";
+    private $table_name = "record";
 
     // свойства объекта
     public $id;
@@ -70,7 +70,7 @@ class Admin
     function read()
     {
         // выбираем все записи
-        $query = "SELECT * FROM " . $this->table_name;
+        $query = "SELECT *, CASE visits WHEN 0 THEN 'false' WHEN 1 THEN 'true' ELSE 'unknown' END AS visit_status FROM " . $this->table_name;
 
         // подготовка запроса
         $stmt = $this->conn->prepare($query);
@@ -100,6 +100,25 @@ class Admin
         $stmt->bindParam("4", $doctor_name);
         $stmt->bindParam("5", $visits);
         $stmt->bindParam("6", $id);
+
+        // выполняем запрос
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    function updateVisit($visits, $id) {
+        $query = "UPDATE "  . $this->table_name .  " SET visits=? WHERE id=?";
+        // Подготовленное выражение для обновления данных
+        $stmt = $this->conn->prepare($query);
+
+        // очистка
+        $this->visits = htmlspecialchars(strip_tags($this->visits));
+
+        // привязываем значения
+        $stmt->bindValue(1, $visits, PDO::PARAM_INT);
+        $stmt->bindValue(2, $id, PDO::PARAM_INT);
 
         // выполняем запрос
         if ($stmt->execute()) {

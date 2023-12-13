@@ -35,7 +35,7 @@ if (
         http_response_code(201);
 
         // сообщим пользователю
-        echo json_encode(array("message" => "Пациент записан."), JSON_UNESCAPED_UNICODE);
+        //echo json_encode(array("message" => "Пациент записан."), JSON_UNESCAPED_UNICODE);
     } // если не удается создать товар, сообщим пользователю
     else {
         // установим код ответа - 503 сервис недоступен
