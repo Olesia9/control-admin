@@ -40,9 +40,9 @@ if (
     else {
         // установим код ответа - 503 сервис недоступен
         http_response_code(503);
-
-        // сообщим пользователю
-        echo json_encode(array("message" => "Невозможно записать пациента."), JSON_UNESCAPED_UNICODE);
+//
+//        // сообщим пользователю
+//        echo json_encode(array("message" => "Невозможно записать пациента."), JSON_UNESCAPED_UNICODE);
     }
 } // сообщим пользователю что данные неполные
 else {
@@ -50,5 +50,5 @@ else {
     http_response_code(400);
 
     // сообщим пользователю
-    echo json_encode(array("message" => "Невозможно записать пациента. Данные неполные."),  JSON_UNESCAPED_UNICODE);
+    //echo json_encode(array("message" => "Невозможно записать пациента. Данные неполные."),  JSON_UNESCAPED_UNICODE);
 }

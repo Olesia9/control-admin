@@ -22,7 +22,7 @@ $product = new Admin($db);
 $data = json_decode(file_get_contents("php://input"));
 
 if (
-    !empty($data->visits) &&
+    ($data->visits === 0 || $data->visits === 1) &&
     !empty($data->id)
 ) {
 // установим значения свойств записи пациента

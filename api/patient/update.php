@@ -25,9 +25,7 @@ if (
     !empty($data->patient_name) &&
     !empty($data->recording_date) &&
     !empty($data->patient_phone) &&
-    !empty($data->doctor_name) &&
-    !empty($data->visits) &&
-    !empty($data->id)
+    !empty($data->doctor_name)
 ) {
 // установим значения свойств записи пациента
     $product->patient_name = $data->patient_name;
