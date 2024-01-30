@@ -6,28 +6,13 @@
 
 Чтобы создать таблицу выполните sql запрос:
 ```
-CREATE TABLE Visits (
-    id INT NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    patient_name VARCHAR(255) NOT NULL,
-    patient_phone VARCHAR(11) NOT NULL,
-    recording_date DATE NOT NULL,
-    doctor_name VARCHAR(255) NOT NULL,
-    visits BOOLEAN NOT NULL
-);
-
-
-CREATE TABLE Visits (
-    id INT NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    patient_name VARCHAR(255) NOT NULL,
-    patient_phone VARCHAR(11) NOT NULL,
-    recording_date DATE NOT NULL,
-    doctor_name VARCHAR(255) NOT NULL,
-    visits TINYINT DEFAULT 0
-);
-
-CREATE TABLE recording ( id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (id), patient_name VARCHAR(255) NOT NULL, patient_phone VARCHAR(11) NOT NULL, recording_date DATE NOT NULL, doctor_name VARCHAR(255) NOT NULL, visits TINYINT(1) CHECK (is_active IN (0, 1)) );
+CREATE TABLE recording (
+id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (id),
+patient_name VARCHAR(255) NOT NULL,
+patient_phone VARCHAR(11) NOT NULL,
+recording_date DATE NOT NULL,
+doctor_name VARCHAR(255) NOT NULL,
+visits TINYINT(1) CHECK (is_active IN (0, 1)) );
 ```
 
 Запросы через постман:  
