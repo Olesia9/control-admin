@@ -12,7 +12,8 @@ patient_name VARCHAR(255) NOT NULL,
 patient_phone VARCHAR(11) NOT NULL,
 recording_date DATE NOT NULL,
 doctor_name VARCHAR(255) NOT NULL,
-visits TINYINT(1) CHECK (is_active IN (0, 1)) );
+visits TINYINT(1) CHECK (is_active IN (0, 1))
+);
 ```
 
 Запросы через постман:  
