@@ -6,7 +6,7 @@
 
 Чтобы создать таблицу выполните sql запрос:
 ```
-CREATE TABLE recording (
+CREATE TABLE record (
 id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (id),
 patient_name VARCHAR(255) NOT NULL,
 patient_phone VARCHAR(11) NOT NULL,
