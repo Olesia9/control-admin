@@ -1,5 +1,4 @@
 <?php
-
 // HTTP-заголовки
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -34,20 +33,16 @@ if (
     $product->doctor_name = $data->doctor_name;
     $product->visits = $data->visits;
     $product->id = $data->id;
-
     // обновление записи пациента
     if ($product->update($data->patient_name, $data->patient_phone, $data->recording_date, $data->doctor_name, $data->visits, $data->id)) {
-
         // установим код ответа - 200 ok
         http_response_code(200);
-
         // сообщим пользователю
         echo json_encode(array("message" => "Запись пациента была обновлена"), JSON_UNESCAPED_UNICODE);
     } // если не удается обновить товар, сообщим пользователю
     else {
         // код ответа - 503 Сервис не доступен
         http_response_code(503);
-
         // сообщение пользователю
         echo json_encode(array("message" => "Невозможно обновить запись пациента"), JSON_UNESCAPED_UNICODE);
     }
@@ -55,7 +50,6 @@ if (
 else {
     // код ответа - 400 Сервис не доступен
     http_response_code(400);
-
     // сообщение пользователю
     echo json_encode(array("message" => "Некорректные данные"), JSON_UNESCAPED_UNICODE);
 }

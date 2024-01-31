@@ -2,7 +2,7 @@
 
 class Admin
 {
-    // подключение к базе данных и таблице "Visits"
+    // подключение к базе данных и таблице "record"
     public $conn;
     private $table_name = "record";
 

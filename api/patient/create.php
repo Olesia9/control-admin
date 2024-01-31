@@ -2,7 +2,6 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-
 // получаем соединение с базой данных
 include_once "../config/database.php";
 include_once "../config/methods.php";
@@ -35,20 +34,17 @@ if (
         http_response_code(201);
 
         // сообщим пользователю
-        //echo json_encode(array("message" => "Пациент записан."), JSON_UNESCAPED_UNICODE);
-    } // если не удается создать товар, сообщим пользователю
+        echo json_encode(array("message" => "Пациент записан."), JSON_UNESCAPED_UNICODE);
+    }
     else {
         // установим код ответа - 503 сервис недоступен
         http_response_code(503);
-//
-//        // сообщим пользователю
-//        echo json_encode(array("message" => "Невозможно записать пациента."), JSON_UNESCAPED_UNICODE);
+
+         echo json_encode(array("message" => "Невозможно записать пациента."), JSON_UNESCAPED_UNICODE);
     }
 } // сообщим пользователю что данные неполные
 else {
     // установим код ответа - 400 неверный запрос
     http_response_code(400);
-
-    // сообщим пользователю
-    //echo json_encode(array("message" => "Невозможно записать пациента. Данные неполные."),  JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("message" => "Невозможно записать пациента. Данные неполные."),  JSON_UNESCAPED_UNICODE);
 }

@@ -6,7 +6,7 @@ header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-// получаем соединение с базой данных
+
 include_once "../config/database.php";
 include_once "../config/methods.php";
 
@@ -31,7 +31,6 @@ if ($product->delete()) {
     // сообщение пользователю
     echo json_encode(array("message" => "Запись была удалена"), JSON_UNESCAPED_UNICODE);
 }
-// если не удается удалить товар
 else {
     // код ответа - 503 Сервис не доступен
     http_response_code(503);
